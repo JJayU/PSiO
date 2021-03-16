@@ -31,7 +31,7 @@ bool is_palindrome(std::string input)
     }
 }
 
-int main()
+int main1()
 {
     std::string slowo;
 
@@ -46,4 +46,6 @@ int main()
     {
         std::cout << "Wyrazenie \"" << slowo << "\" nie jest palindromem\n";
     }
+
+    return 0;
 }
