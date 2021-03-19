@@ -15,7 +15,7 @@ std::vector<size_t> find_all(std::string input, char searched_letter)
 	return temp;
 }
 
-int main2()
+int main()
 {
 	std::string data;
 

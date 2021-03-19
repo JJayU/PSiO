@@ -31,7 +31,7 @@ bool is_palindrome(std::string input)
     }
 }
 
-int main1()
+int main()
 {
     std::string slowo;
 
