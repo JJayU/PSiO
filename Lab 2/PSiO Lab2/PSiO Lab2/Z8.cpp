@@ -143,7 +143,7 @@ int main()
 	rates = sort_usd(rates);
 
 	std::cout << "10 dni z najwyszym kursem USD:\n";
-	for (int i = rates.size() - 10; i < rates.size(); i++)
+	for (size_t i = rates.size() - 10; i < rates.size(); i++)
 	{
 		std::cout << rates[i].date << "  " << rates[i].usd << std::endl;
 	}

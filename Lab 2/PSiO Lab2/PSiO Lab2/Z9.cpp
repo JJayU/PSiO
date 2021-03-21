@@ -3,8 +3,6 @@
 #include <fstream>
 #include <sstream>
 
-//Data,Czas,Predkosc dzwieku [m/s],Temp. dzwiekiem [蚓],Cisnienie atmosferyczne [mbar],Temperatura [蚓],Wilgotnosc [%],Kompas,Predkosc U-V,Predkosc wiatru [m/s],Kierunek,Wysokosc,Temp. wewnatrz pomieszczenia 113 [蚓]
-
 struct measured_data
 {
 	std::string date;
@@ -100,7 +98,7 @@ std::vector<measured_data> bubble_sort(std::vector<measured_data> input_vector)
 
 int main()
 {
-    std::vector<measured_data> data = bubble_sort(load_measured_data("temp02-2020.csv"));      //TODO: Shorten sorting time
+    std::vector<measured_data> data = bubble_sort(load_measured_data("temp02-2020.csv"));
 
     for (size_t i = 0; i < data.size(); i++)
     {
