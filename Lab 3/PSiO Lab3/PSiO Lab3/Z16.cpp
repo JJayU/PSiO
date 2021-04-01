@@ -86,13 +86,26 @@ int main()
     std::vector<exchange_rate> data;
     load_exchange_rates("kursy_usd_eur.csv", data);
 
+    sort_eur(data);
+    std::cout << "\n\n10 dni z najnizszym kursem EUR: ";
+    display_top_last(data, true, 10);
+
     sort_usd(data);
     std::cout << "10 dni z najwyzszym kursem USD: ";
     display_top_last(data, false, 10);
 
-    sort_eur(data);
-    std::cout << "\n\n10 dni z najnizszym kursem EUR: ";
-    display_top_last(data, true, 10);
+    struct Comp
+    {
+        bool operator() (const exchange_rate& a, double b) const { return a.usd < b; };
+        bool operator() (double a, const exchange_rate& b) const { return a < b.usd; };
+    };
+
+    auto wynik = std::equal_range(data.begin(), data.end(), 3.9011, Comp{});
+    std::cout << "\n\nDzien z wartoscia kursu USD rowna 3.9011:\n";
+    std::cout << data[wynik.first - data.begin()].date << std::endl;
+    std::cout << data[wynik.first - data.begin()].usd << std::endl;
+    std::cout << data[wynik.first - data.begin()].eur << std::endl;
+    std::cout << data[wynik.first - data.begin()].table_id << std::endl;
 
 	return 0;
 }
