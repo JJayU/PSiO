@@ -63,12 +63,10 @@ int main()
 			return a.second > b.second;
 		});
 
-	
 	for (auto i : map2)
 	{
 		std::cout << i.first << " " << i.second << std::endl;
 	}
-	
 
 	std::fstream output;
 	output.open("output_zk1.txt", std::ios::out);
