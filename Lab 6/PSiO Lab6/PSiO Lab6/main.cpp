@@ -1,13 +1,11 @@
 ﻿#include <iostream>
-#include "Histogram.h"
-
+#include "complexnumbers.h"
+#include "wektor.h"
+#include "matrix.h"
+\
 int main()
 {
-    Histogram hist;
-    hist.from_csv(R"(wyniki.csv)", ',', 4);
-    std::cout << hist;
-    std::pair<int, int> b = hist.range();
-    std::cout << b.first << " - " << b.second;
-    std::vector<int> a = hist.unique_bins();
-
+    matrix<int> m;
+    m = matrix<int>::Fill(3, 3, []() { return 5; });
+    std::cout << "\n\n\n" << m;
 }
